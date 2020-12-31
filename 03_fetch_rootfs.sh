@@ -9,7 +9,8 @@ debootstrap stable $BASE_DIR http://deb.debian.org/debian/
 
 cd $BASE_DIR
 touch chroot.sh
-echo "echo 'root:root' | chpasswd && echo 'Acquire::ForceIPv4 \"true\";' | sudo tee /etc/apt/apt.conf.d/99force-ipv4 && yes | apt-get install grub parted fluxbox xinit eterm" > chroot.sh
+echo "echo 'root:root' | chpasswd && echo 'Acquire::ForceIPv4 \"true\";' | sudo tee /etc/apt/apt.conf.d/99force-ipv4 && yes | apt-get install grub parted curl git" > chroot.sh
+echo "git clone https://github.com/nomadic-linux/nomadic && cd nomadic && ./nomadic" >> chroot.sh
 chmod +x chroot.sh
 
 cd ..

@@ -12,7 +12,7 @@ make mrproper
 make defconfig
 
 # Changes the name of the system to 'minimal'.
-sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"minimal\"/" .config
+sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"nomadic\"/" .config
 
 # Compile the kernel with optimization for "parallel jobs" = "number of processors".
 # Good explanation of the different kernels:
